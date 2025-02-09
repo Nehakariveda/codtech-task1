@@ -1,0 +1,140 @@
+Version Control with Git in DevOps
+
+Git plays a crucial role in DevOps by enabling efficient version control, collaboration, and automation. It helps teams manage code changes, track history, and integrate with CI/CD pipelines for smooth software delivery.
+
+
+---
+
+1. What is Git in DevOps?
+
+Git is a distributed version control system that allows multiple developers to work on the same project simultaneously while maintaining code history, branching, and merging capabilities.
+
+Key Benefits of Git in DevOps:
+
+Collaboration – Multiple developers can work on the same codebase without conflicts.
+
+Tracking Changes – Every change is recorded, making it easy to roll back if needed.
+
+Branching & Merging – Developers can create separate branches for features, bug fixes, and releases.
+
+Automation – Git integrates with CI/CD tools like Jenkins, GitHub Actions, and GitLab CI/CD.
+
+Security & Backup – Since it's distributed, every developer has a complete copy of the repository.
+
+
+
+---
+
+2. Git Workflow in DevOps
+
+1. Clone the Repository
+
+git clone <repository_url>
+
+
+2. Create a New Branch (Feature Branching)
+
+git checkout -b feature-branch
+
+
+3. Make Changes and Commit
+
+git add .
+git commit -m "Implemented new feature"
+
+
+4. Push Changes to Remote Repository
+
+git push origin feature-branch
+
+
+5. Merge Changes via Pull Request (PR) or Merge Request (MR)
+
+Open a PR on GitHub/GitLab
+
+Review and approve changes
+
+Merge into the main branch
+
+
+
+6. Deploy Using CI/CD Pipelines
+
+Once merged, automated CI/CD pipelines test and deploy the code.
+
+
+
+
+
+---
+
+3. Git Branching Strategies in DevOps
+
+1. Feature Branching – Developers work on individual feature branches and merge them after approval.
+
+
+2. Git Flow – Uses develop, main, feature, release, and hotfix branches.
+
+
+3. GitHub Flow – Simple model with a main branch and short-lived feature branches.
+
+
+4. Trunk-Based Development – Developers work directly on the main branch with frequent commits.
+
+
+
+
+---
+
+4. Git Integration in DevOps Pipelines
+
+Git integrates with various DevOps tools like:
+
+Jenkins – Automates build and deployment based on Git changes.
+
+GitHub Actions – Runs CI/CD workflows triggered by Git events.
+
+GitLab CI/CD – Automates testing and deployment from a Git repository.
+
+Bitbucket Pipelines – CI/CD solution integrated with Bitbucket repositories.
+
+
+Example: Automating deployment with GitHub Actions
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Deploy
+        run: |
+          echo "Building application..."
+          echo "Deploying to production..."
+
+
+---
+
+5. Best Practices for Git in DevOps
+
+✔ Keep commits small and meaningful.
+✔ Follow a consistent branching strategy.
+✔ Use pull requests for code reviews.
+✔ Automate testing and deployment with Git-based CI/CD.
+✔ Secure repositories with access controls and branch protections.
+✔ Regularly clean up unused branches.
+
+
+---
+
+Conclusion
+
+Git is a foundational tool in DevOps that enables collaboration, automation, and efficient software delivery. By following best practices and integrating Git into CI/CD pipelines, teams can ensure smooth and reliable deployments.
+
+Would you like guidance on a specific Git-related DevOps setup?
